@@ -1,0 +1,98 @@
+/* Page background */
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e293b, #334155);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Card with entry animation */
+  .login-card {
+    background: white;
+    padding: 40px;
+    width: 380px;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    animation: fadeSlideIn 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  /* Animation */
+  @keyframes fadeSlideIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Title */
+  .login-title {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1e293b;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  
+  /* Inputs */
+  .login-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+    transition: border 0.2s ease;
+  }
+  
+  .login-input:focus {
+    outline: none;
+    border-color: #2563eb;
+  }
+  
+  /* Button */
+  .login-button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    background-color: #2563eb;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+  
+  .login-button:hover {
+    background-color: #1d4ed8;
+  }
+  
+  /* Loading spinner */
+  .login-button.loading {
+    background-color: #1d4ed8;
+    cursor: not-allowed;
+  }
+  
+  .login-button.loading::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    border: 2px solid white;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    animation: spin 0.6s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: translateY(-50%) rotate(360deg);
+    }
+  }

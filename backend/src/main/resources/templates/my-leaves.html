@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout('My Leaves', ~{::body})}">
+
+<body>
+
+<h2>My Leave Requests</h2>
+<p class="page-subtitle">View and manage your leave applications</p>
+
+<table class="data-table">
+
+    <thead>
+    <tr>
+        <th>Leave Type</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Applied At</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr th:each="leave : ${leaveRequests}">
+
+        <td th:text="${leave.leaveType.name}">SICK</td>
+
+        <td th:text="${leave.startDate}">2026-02-10</td>
+
+        <td th:text="${leave.endDate}">2026-02-12</td>
+
+        <td th:text="${leave.appliedAt}">2026-02-01</td>
+
+        <!-- Status Badge -->
+        <td>
+            <span th:text="${leave.status}"
+                  th:classappend="
+                        ${leave.status.name() == 'PENDING'} ? 'status-badge pending' :
+                        (${leave.status.name() == 'APPROVED'} ? 'status-badge approved' :
+                        (${leave.status.name() == 'REJECTED'} ? 'status-badge rejected' :
+                        'status-badge cancelled'))">
+            </span>
+        </td>
+
+        <!-- Cancel Button (only if PENDING) -->
+        <td>
+            <form th:if="${leave.status.name() == 'PENDING'}"
+                  method="post"
+                  th:action="@{'/employee/cancel-leave/' + ${leave.id}}">
+
+                <button type="submit" class="danger-btn">
+                    Cancel
+                </button>
+
+            </form>
+
+            <span th:if="${leave.status.name() != 'PENDING'}">-</span>
+        </td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+<!-- Empty State -->
+<div th:if="${#lists.isEmpty(leaveRequests)}" class="empty-state">
+    You have not applied for any leaves yet.
+</div>
+
+</body>
+</html>

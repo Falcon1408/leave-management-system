@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout('Leave Types', ~{::body})}">
+
+<body>
+
+<h2>Leave Types</h2>
+
+<table class="data-table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Max Days / Year</th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>SICK</td>
+        <td>12</td>
+        <td>Medical leave</td>
+        <td>
+            <button class="secondary-btn">Edit</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout('Manage Users', ~{::body})}">
+
+<body>
+
+<h2>Manage Users</h2>
+
+<table class="data-table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>John Doe</td>
+        <td>john@example.com</td>
+        <td>EMPLOYEE</td>
+        <td>ACTIVE</td>
+        <td>
+            <button class="secondary-btn">Edit</button>
+            <button class="danger-btn">Deactivate</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

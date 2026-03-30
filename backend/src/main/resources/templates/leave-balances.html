@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout('Leave Balances', ~{::body})}">
+
+<body>
+
+<h2>My Leave Balances</h2>
+<p class="page-subtitle">Remaining leave days per leave type</p>
+
+<table class="data-table">
+
+    <thead>
+    <tr>
+        <th>Leave Type</th>
+        <th>Description</th>
+        <th>Max Days / Year</th>
+        <th>Remaining Days</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr th:each="balance : ${leaveBalances}">
+        <td th:text="${balance.leaveType.name}">SICK</td>
+
+        <td th:text="${balance.leaveType.description}">
+            Medical leave for illness
+        </td>
+
+        <td th:text="${balance.leaveType.maxDaysPerYear}">12</td>
+
+        <td>
+            <span th:text="${balance.remainingDays}"
+                  th:classappend="${balance.remainingDays <= 2} ? 'low-balance' : ''">
+                5
+            </span>
+        </td>
+    </tr>
+
+    </tbody>
+
+</table>
+
+<!-- Empty State -->
+<div th:if="${#lists.isEmpty(leaveBalances)}" class="empty-state">
+    No leave balances found.
+</div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:fragment="layout(pageTitle, content)">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${pageTitle}">Leave Management System</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="logo">
+        Leave Management System
+    </div>
+
+    <div class="user-section">
+        <span>Welcome, Admin</span>
+        <a href="/login" class="logout-btn">Logout</a>
+    </div>
+</header>
+
+<div class="main-container">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <!-- ===== EMPLOYEE SECTION ===== -->
+        <div class="menu-group">
+            <div class="menu-title">Employee</div>
+            <a href="/dashboard" class="nav-link">Dashboard</a>
+            <a href="/apply-leave" class="nav-link">Apply Leave</a>
+            <a href="/my-leaves" class="nav-link">My Leaves</a>
+            <a href="/leave-balances" class="nav-link">Leave Balances</a>
+            <a href="/profile" class="nav-link">Profile</a>
+        </div>
+
+        <!-- ===== ADMIN SECTION ===== -->
+        <div class="menu-group">
+            <div class="menu-title">Admin</div>
+            <a href="/admin-dashboard" class="nav-link">Admin Dashboard</a>
+            <a href="/leave-requests" class="nav-link">Leave Requests</a>
+            <a href="/manage-users" class="nav-link">Manage Users</a>
+            <a href="/leave-types" class="nav-link">Leave Types</a>
+            <a href="/holidays" class="nav-link">Holidays</a>
+        </div>
+
+    </aside>
+
+    <!-- ================= CONTENT ================= -->
+    <section class="content">
+        <div class="content-card">
+            <div th:replace="${content}"></div>
+        </div>
+    </section>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    © 2026 Leave Management System
+</footer>
+
+</body>
+</html>

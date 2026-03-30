@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout('My Profile', ~{::body})}">
+
+<body>
+
+<h2>My Profile</h2>
+<p class="page-subtitle">View your account details</p>
+
+<div class="profile-card">
+
+    <div class="profile-row">
+        <label>Full Name</label>
+        <span th:text="${user.firstName + ' ' + user.lastName}">
+            John Doe
+        </span>
+    </div>
+
+    <div class="profile-row">
+        <label>Username</label>
+        <span th:text="${user.username}">johndoe</span>
+    </div>
+
+    <div class="profile-row">
+        <label>Email</label>
+        <span th:text="${user.email}">john@email.com</span>
+    </div>
+
+    <div class="profile-row">
+        <label>Role</label>
+        <span th:text="${user.role.name}">EMPLOYEE</span>
+    </div>
+
+    <div class="profile-row">
+        <label>Status</label>
+        <span th:text="${user.status}"
+              th:classappend="${user.status.name() == 'ACTIVE'} ? 'active-status' : 'inactive-status'">
+            ACTIVE
+        </span>
+    </div>
+
+    <div class="profile-row">
+        <label>Joining Date</label>
+        <span th:text="${user.joiningDate}">2024-01-10</span>
+    </div>
+
+    <div class="profile-row">
+        <label>Account Created</label>
+        <span th:text="${user.createdAt}">2024-01-10</span>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+Reset default browser spacing
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Make app fill full screen */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8fafc;
+}
+
+/* Prevent unwanted horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Smooth font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
