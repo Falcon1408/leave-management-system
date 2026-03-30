@@ -2,7 +2,6 @@
 
 A full-stack Leave Management System built using **Spring Boot** and **React (Vite)** that automates employee leave application, approval workflows, and leave tracking within an organization.
 
-> ⚠️ Note: LMS here refers to *Leave Management System*, not Learning Management System.
 
 ---
 
