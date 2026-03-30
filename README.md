@@ -180,21 +180,13 @@ All users are automatically created on application startup via `data.sql`.
 
 ---
 
-# 🗄 Database Configuration
+## ⚠️ Database Setup
 
-Update your database credentials in:
+Update the following property before running:
 
-```
-backend/src/main/resources/application.properties
-```
+spring.datasource.password=your_mysql_password_here
 
-Example:
-
-```
-spring.datasource.url=jdbc:mysql://localhost:3306/lms
-spring.datasource.username=root
-spring.datasource.password=yourpassword
-```
+Ensure MySQL is running and the database `leave_management_db` exists.
 
 ---
 
