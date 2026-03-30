@@ -193,7 +193,7 @@ Ensure MySQL is running and the database `leave_management_db` exists.
 # 📄 API Documentation
 
 ```
-[http://localhost:8080/swagger-ui/](http://localhost:8080/swagger-ui/index.html)
+(http://localhost:8080/swagger-ui/index.html)
 ```
 
 ---
