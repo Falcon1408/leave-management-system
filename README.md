@@ -57,14 +57,14 @@ leave-management-system/
 * Spring Boot
 * Spring Security
 * Spring Data JPA (Hibernate)
-* MySQL / PostgreSQL
+* MySQL
 
 ## Frontend
 
 * React
 * Vite
 * Axios
-* CSS / Tailwind (if used)
+* CSS
 
 ---
 
@@ -89,7 +89,7 @@ Make sure you have installed:
 * Java 17+
 * Maven
 * Node.js (v16+)
-* MySQL / PostgreSQL
+* MySQL
 
 ---
 
@@ -136,27 +136,47 @@ http://localhost:8080/api/
 Ensure backend is running before using frontend.
 
 ---
+## 🔑 Demo Credentials
 
-# 🔑 Demo Credentials
+The application comes with preloaded demo users for testing different roles.
+All users are automatically created on application startup via `data.sql`.
 
-Use these accounts to explore different roles:
+> **Password for all users:** `password123`
 
-### 👨‍💼 Employee
-
-* Email: [employee@test.com](mailto:employee@test.com)
-* Password: password123
-
-### 👨‍💻 Manager
-
-* Email: [manager@test.com](mailto:manager@test.com)
-* Password: password123
+---
 
 ### 🧑‍💼 Admin
 
-* Email: [admin@test.com](mailto:admin@test.com)
-* Password: password123
+* **Email:** [admin@test.com](mailto:admin@test.com)
+* **Access:** Full system access (manage employees, leave types, holidays, reports)
 
-> ⚠️ These are demo credentials for testing purposes only.
+---
+
+### 👨‍💻 Manager
+
+* **Email:** [manager@test.com](mailto:manager@test.com)
+* **Access:** Approve/reject leave requests, view team leave data
+
+---
+
+### 👨‍💼 Employee
+
+* **Email:** [employee1@test.com](mailto:employee1@test.com)
+
+* **Access:** Apply for leave, view balance and history
+
+* **Email:** [employee2@test.com](mailto:employee2@test.com)
+
+* **Access:** Apply for leave, view balance and history
+
+---
+
+## ⚠️ Notes
+
+* These are **demo accounts for testing purposes only**
+* Users are seeded automatically using `data.sql`
+* Make sure the backend is running before attempting login
+* JWT authentication is required for accessing protected endpoints
 
 ---
 
