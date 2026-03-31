@@ -11,7 +11,7 @@ import springboot.leavemanagementsystem.entity.User;
 import springboot.leavemanagementsystem.repository.LeaveBalanceRepository;
 import springboot.leavemanagementsystem.repository.LeaveTypeRepository;
 import springboot.leavemanagementsystem.repository.UserRepository;
-
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -34,32 +34,37 @@ public class LeaveBalanceService {
     /*
      * Fetch paginated leave balances with optional user filter
      */
-    @Transactional(readOnly = true)
+    @Transactional
     public Page<LeaveBalanceDto> getBalances(
             Long userId,
             Integer year,
             Pageable pageable
     ) {
 
+        // DEFAULT YEAR
+        int targetYear = (year != null) ? year : LocalDate.now().getYear();
+
+        // ENSURE DATA EXISTS
+        ensureYearInitialized(targetYear);
+
         Page<LeaveBalance> page;
 
         if (userId != null) {
-            // Use entity field name "user"
             page = leaveBalanceRepository
-                    .findByUser_IdAndYear(userId, year, pageable);
+                    .findByUser_IdAndYear(userId, targetYear, pageable);
         } else {
             page = leaveBalanceRepository
-                    .findByYear(year, pageable);
+                    .findByYear(targetYear, pageable);
         }
 
         return page.map(this::mapToDto);
     }
 
     /*
-     * Initialize leave balances for all users and leave types for a given year
+     * Ensure leave balances exist for given year (AUTO FIX)
      */
     @Transactional
-    public void initializeYear(Integer year) {
+    public void ensureYearInitialized(int year) {
 
         List<User> users = userRepository.findAll();
         List<LeaveType> leaveTypes = leaveTypeRepository.findAll();
@@ -82,6 +87,14 @@ public class LeaveBalanceService {
                         });
             }
         }
+    }
+
+    /*
+     * Manual yearly initialization (Admin trigger)
+     */
+    @Transactional
+    public void initializeYear(Integer year) {
+        ensureYearInitialized(year);
     }
 
     /*

@@ -34,9 +34,7 @@ public class LeaveBalanceController {
     }
 
     @PostMapping("/initialize")
-    public ResponseEntity<String> initializeYear(
-            @RequestParam Integer year
-    ) {
+    public ResponseEntity<String> initializeYear(@RequestParam Integer year) {
         leaveBalanceService.initializeYear(year);
         return ResponseEntity.ok("Leave balances initialized for year " + year);
     }
