@@ -287,11 +287,13 @@ Define and manage organizational holidays.
 <img src="./screenshots/AdminHolidayManagement.png" width="800"/>
 
 ---
+## 🎥 Demo Video
 
-# 🎥 Demo
+A quick walkthrough of the Leave Management System showcasing authentication, role-based access, and the complete leave workflow.
 
-*Add your Loom/YouTube demo link here*
+[![Watch Demo](https://img.youtube.com/vi/lZSX2dPrckc/0.jpg)](https://youtu.be/lZSX2dPrckc)
 
+> Includes Admin, Manager, and Employee functionalities along with end-to-end leave request handling.
 ---
 
 # ⚠️ Important Notes
