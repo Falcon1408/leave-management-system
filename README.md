@@ -200,7 +200,91 @@ Ensure MySQL is running and the database `leave_management_db` exists.
 
 # 📸 Screenshots
 
-*Add screenshots here (UI, dashboards, etc.)*
+## 📸 Application Walkthrough
+
+### 🔐 Authentication
+
+Secure login using JWT-based authentication.
+
+<img src="./screenshots/LoginPage.png" width="800"/>
+
+---
+
+## 👨‍💼 Employee Features
+
+### 📊 Employee Dashboard
+
+Overview of leave balance and quick actions.
+
+<img src="./screenshots/EmployeeDashboard.png" width="800"/>
+
+### 📝 Apply for Leave
+
+Employees can submit leave requests بسهولة.
+
+<img src="./screenshots/EmployeeLeaveApplication.png" width="800"/>
+
+### 📜 Leave History
+
+Track past and current leave requests.
+
+<img src="./screenshots/EmployeeLeaveHistory.png" width="800"/>
+
+---
+
+## 👨‍💻 Manager Features
+
+### 📋 Manager Dashboard
+
+View team leave activity and pending approvals.
+
+<img src="./screenshots/ManagerDashboard.png" width="800"/>
+
+### ✅ Leave Approval System
+
+Approve or reject employee leave requests.
+
+<img src="./screenshots/ManagerLeaveApproval.png" width="800"/>
+
+### 👥 Team Leave History
+
+Monitor leave records across the team.
+
+<img src="./screenshots/ManagerTeamLeaveHistory.png" width="800"/>
+
+---
+
+## 🧑‍💼 Admin Features
+
+### 🛠 Admin Dashboard
+
+Central control panel for system management.
+
+<img src="./screenshots/AdminDashboard.png" width="800"/>
+
+### 👨‍👩‍👧 Employee Management
+
+Add, update, or manage employees.
+
+<img src="./screenshots/AdminsEmployeeManagement.png" width="800"/>
+
+### 🏖 Leave Type Management
+
+Configure different types of leaves.
+
+<img src="./screenshots/AdminLeaveTypeManagement.png" width="800"/>
+
+### 📊 Leave Balance Management
+
+Manage and assign leave balances.
+
+<img src="./screenshots/AdminLeaveBalanceManagement.png" width="800"/>
+
+### 🎉 Holiday Management
+
+Define and manage organizational holidays.
+
+<img src="./screenshots/AdminHolidayManagement.png" width="800"/>
 
 ---
 
