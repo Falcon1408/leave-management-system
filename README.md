@@ -220,7 +220,7 @@ Overview of leave balance and quick actions.
 
 ### 📝 Apply for Leave
 
-Employees can submit leave requests بسهولة.
+Employees can submit leave requests.
 
 <img src="./screenshots/EmployeeLeaveApplication.png" width="800"/>
 
