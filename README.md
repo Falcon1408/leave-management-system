@@ -206,7 +206,7 @@ Ensure MySQL is running and the database `leave_management_db` exists.
 
 Secure login using JWT-based authentication.
 
-<img src="./screenshots/LoginPage.png" width="800"/>
+<img src="./screenshots/LoginPage.png" width="400"/>
 
 ---
 
